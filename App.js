@@ -103,7 +103,8 @@ export default function App() {
 
       <View style={styles.sendButtonContainer}>
       <Text style={styles.sendText}>{barcode}</Text> 
-        <Button disabled={!barcode} title={'Send'} onPress={() => sendScanData()} />
+        <Button style={styles.btn} disabled={!barcode} title={'Send'} onPress={() => sendScanData()} />
+       <Button style={styles.btn} disabled={!scanned} title={'Clear'} onPress={() => {setBarcode(null)}} /> 
       </View>
 
     </View>
@@ -139,4 +140,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
   },
+  btn: {
+    marginBottom: 20
+  }
 });
